@@ -27,7 +27,7 @@ Kali Linux may not include the latest .NET SDK. Use Microsoft’s official scrip
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
-
+```
 Then export the following environment variables to make .NET available in your terminal:
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
