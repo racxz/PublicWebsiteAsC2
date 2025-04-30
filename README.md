@@ -28,3 +28,8 @@ wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 
+Then export the following environment variables to make .NET available in your terminal:
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+💡 To make the environment variables persistent across terminal sessions, add the export lines to your ~/.bashrc or ~/.zshrc.
+
