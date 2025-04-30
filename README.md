@@ -29,7 +29,32 @@ chmod +x dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 ```
 Then export the following environment variables to make .NET available in your terminal:
+```
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+```
 💡 To make the environment variables persistent across terminal sessions, add the export lines to your ~/.bashrc or ~/.zshrc.
+
+🧠 Step 2: Create a New Console App
+
+Run the following commands to create a new console app and navigate into the project folder:
+```
+dotnet new console -n App
+cd App
+```
+Next, replace the contents of Program.cs with the code provided in this repository.
+You will also need to install the required NuGet package:
+```
+dotnet add package HtmlAgilityPack
+```
+🛠 Step 3: Build to a Windows .exe
+
+To build the project as a self-contained Windows .exe file, use the following command:
+```
+dotnet publish -c Release -r win-x64 --self-contained true \
+  -o winbuild \
+  /p:PublishSingleFile=true \
+  /p:IncludeNativeLibrariesForSelfExtract=true \
+  /p:StripSymbols=true
+```
 
