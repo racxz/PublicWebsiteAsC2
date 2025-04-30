@@ -19,25 +19,26 @@ This project demonstrates how to:
 
 ---
 
-## 🌐 Step 1: Install .NET 8.0 SDK on Kali
+## 🌐 Install .NET 8.0 SDK on Kali
 
 > Kali Linux doesn’t always come with the latest .NET SDK. Use Microsoft’s official script:
+Step 1: install dotnet
 
-wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-chmod +x dotnet-install.sh
-./dotnet-install.sh --channel 8.0
+>> wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+>> chmod +x dotnet-install.sh
+>> ./dotnet-install.sh --channel 8.0
 
 Then export the required environment paths:
 
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+>> export DOTNET_ROOT=$HOME/.dotnet
+>> export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
 ##💡 Add the export lines to your ~/.bashrc or ~/.zshrc to make them permanent.
 
-🧠 Step 2: Create a New Console App
+Step 2: Create a New Console App
 
-dotnet new console -n App
-cd App
+>> dotnet new console -n App
+>> cd App
 
 Replace the contents of Program.cs with the C# code from this repo.
 
@@ -45,11 +46,11 @@ Install the required dependency:
 
 dotnet add package HtmlAgilityPack
 
-🛠 Step 3: Build to Windows .exe
+Step 3: Build to Windows .exe
 
 To build a Windows-compatible .exe from Kali, run:
 
-dotnet publish -c Release -r win-x64 --self-contained true \
+>> dotnet publish -c Release -r win-x64 --self-contained true \
   -o winbuild \
   /p:PublishSingleFile=true \
   /p:IncludeNativeLibrariesForSelfExtract=true \
